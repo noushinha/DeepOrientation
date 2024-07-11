@@ -1,0 +1,12 @@
+tensorflow==2.15
+keras
+scikit-learn==0.23.2
+numpy~=1.19
+starfile==0.5.2
+mrcfile==1.4.3
+matplotlib==3.7.0
+scipy~=1.10.1
+lxml
+pandas
+yaml
+pynrrd
