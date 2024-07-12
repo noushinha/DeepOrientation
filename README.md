@@ -1,4 +1,4 @@
-# Deep Orientation Estimation in Cryo-ET (DeepOrt)
+DeepOrientation: Deep Orientation Estimation of Macromolecules in Cryo-electron tomography
  
 DeepOrt is a learning based network for orientation estimation based on six-Degrees-of-Freedom of the object (6DoF).
 The network architecture includes a multi-layer perceptron.
@@ -32,5 +32,8 @@ data
 The ```npy``` folder holds the npy files (euler, quaternions, 6dof), train and test data.
 While the ```res``` folder is where the results will be dumped.
 
+citation:
 
+```
+```
 
