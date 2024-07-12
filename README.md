@@ -4,7 +4,6 @@ This repository is the implementation of [DeepOrientation: Deep Orientation Esti
 
 DeepOrt is a learning-based network for orientation estimation based on six degrees of freedom of the object (6DoF).
 The network architecture includes a multi-layer perceptron.
-The requirements.txt file shows the necessary packages to use the repository.
 
 <h3>Data availability</h3>
 Our data is available at: https://www.zib.de/ext-data/PolNet_Medium_Size_Dataset_4v4r_and_3j9i.zip
