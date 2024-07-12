@@ -27,11 +27,6 @@ class DataLoader:
         self.ts_labels = None
         self.ts_meta = None
         self.ts_cls = None
-        self.vl_data = None
-        self.vl_mask = None
-        self.vl_labels = None
-        self.vl_meta = None
-        self.vl_cls = None
 
         self.tr_steps = 0
         self.vl_steps = 0
@@ -66,7 +61,6 @@ class DataLoader:
         print(f"Fetched train data in : {str(deltatime)}")
 
     def load_test(self):
-        # shuffle_buffer_size = 100
         if os.path.exists(os.path.join(npy_dir, f"test_tomo.npy")):
             self.ts_data = np.load(os.path.join(npy_dir, "test_tomo.npy"), mmap_mode='r+')
         if os.path.exists(os.path.join(npy_dir, f"test_mask.npy")):
@@ -79,24 +73,6 @@ class DataLoader:
 
         if config_dict['classification']:
             self.create_cls_labels()
-
-    def concat_pose(self):
-        train_position_labels = np.load(os.path.join(npy_dir, "train_shifts.npy"), mmap_mode='r+')
-        test_position_labels = np.load(os.path.join(npy_dir, "test_shifts.npy"), mmap_mode='r+')
-
-        self.labels = np.concatenate((self.labels, train_position_labels), axis=1)
-        self.ts_labels = np.concatenate((self.labels, test_position_labels), axis=1)
-
-    def concat_data(self, data_path, label_path, data_mode="train"):
-        next_data = np.load(data_path)
-        next_labels = np.load(label_path)
-
-        if data_mode == "train":
-            self.data = np.concatenate((self.data, next_data), axis=0)
-            self.labels = np.concatenate((self.labels, next_labels), axis=0)
-        elif data_mode == "test":
-            self.ts_data = np.concatenate((self.ts_data, next_data), axis=0)
-            self.ts_labels = np.concatenate((self.ts_labels, next_labels), axis=0)
 
     def split_data(self):
         x_train, x_valid, y_train, y_valid = train_test_split(self.data,
