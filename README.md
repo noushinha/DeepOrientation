@@ -1,4 +1,6 @@
-this repository is the implementation of [DeepOrientation: Deep Orientation Estimation of Macromolecules in Cryo-electron tomography]().
+<h3>DeepOrientation: Deep Orientation Estimation of Macromolecules in Cryo-electron tomography</h3>
+
+This repository is the implementation of [DeepOrientation: Deep Orientation Estimation of Macromolecules in Cryo-electron tomography]().
 
 DeepOrt is a learning-based network for orientation estimation based on six degrees of freedom of the object (6DoF).
 The network architecture includes a multi-layer perceptron.
